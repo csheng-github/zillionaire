@@ -21,7 +21,7 @@ const emit = defineEmits<Emits>();
 const displayPrize = useDelay(async (prize: number) => {
   // fetch from backend
   isShowPrize.value = true;
-  console.log(prize);
+  console.log('抽奖结果(1代表中了)：', prize);
 });
 
 const isShowBlindBox = ref(false);

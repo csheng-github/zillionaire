@@ -84,6 +84,7 @@ const [initZillinaire] = useLoadingEvent(
 onMounted(async () => {
   await initZillinaire();
   const getPointerFromSite = roadRef.value!.getPointerFromSite;
+  modelValue.value = Number(localStorage.getItem('dice_number')) || 0
   stepPointer.value = getPointerFromSite(modelValue.value);
   isFinished.value = false;
 });
