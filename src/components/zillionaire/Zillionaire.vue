@@ -143,8 +143,8 @@ defineExpose({ resetOrigin, isInitialized });
 .sifter-container {
   z-index: 9;
   position: absolute;
-  bottom: 10%;
+  bottom: 4%;
   left: 50%;
-  transform: translateX(-100%);
+  transform: translateX(-50%);
 }
 </style>
