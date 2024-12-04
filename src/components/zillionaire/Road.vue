@@ -63,20 +63,17 @@ defineExpose({ getPointerFromSite, initRoad: init });
 
 <style lang="scss" scoped>
 .road-box {
-  width: 140%;
-  aspect-ratio: 1/1;
-  min-width: 1000px;
-  min-height: 400px;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
-  top: 0;
-  left: 0;
-  transform-style: preserve-3d;
-  transform: rotateX(50deg) rotateY(9deg) rotateZ(-50deg) translateX(17%) translateY(-37%);
-  transform: rotateX(50deg) rotateY(9deg) rotateZ(-50deg) translateX(17%) translateY(-37%);
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 
   :deep(.road-holder) {
     position: absolute;
-    // border: 1px solid;
+    border: 1px solid;
   }
 }
 </style>

@@ -123,8 +123,8 @@ defineExpose({ resetOrigin, isInitialized });
 
 <style lang="scss" scoped>
 .zillionaire-outbox {
-  height: 100%;
-  aspect-ratio: 2000/1080;
+  width: 100vw;
+  height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -135,9 +135,9 @@ defineExpose({ resetOrigin, isInitialized });
   bottom: 0;
   left: 0;
   right: 0;
-  background-image: url(./background.jpg);
-  background-size: 100% auto;
-  background-position: center;
+  // background-image: url(./background.jpg);
+  // background-size: 100% auto;
+  // background-position: center;
 }
 
 .sifter-container {

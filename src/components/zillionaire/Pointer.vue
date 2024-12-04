@@ -141,8 +141,7 @@ defineExpose({ initPointer: init });
 
 .pointer-box {
   position: absolute;
-  transform-origin: bottom;
-  transform: translate(-64%, -90%) rotateX(-50deg) rotateY(-9deg) rotateZ(25deg);
+  transform: translate(-50%, -50%) scale(1.5);
   transition: v-bind(transition);
   background-size: contain;
   background-repeat: no-repeat;
