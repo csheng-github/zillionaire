@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "eslint:fix": "eslint --fix",
+    "lint:prettier": "prettier --write **/*.{js,json,tsx,css,less,scss,vue,html,md}"
   },
   "dependencies": {
     "@vueuse/core": "^10.5.0",
@@ -14,10 +16,19 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@eslint/create-config": "^1.4.0",
+    "@eslint/js": "^9.16.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue-macros/volar": "^0.17.0",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-vue": "^9.32.0",
+    "globals": "^15.13.0",
+    "prettier": "^3.4.1",
     "sass": "^1.69.4",
     "typescript": "^5.0.2",
+    "typescript-eslint": "^8.17.0",
     "unocss": "^0.57.1",
     "unplugin-vue-components": "^0.25.2",
     "unplugin-vue-macros": "^2.6.1",
