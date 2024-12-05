@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import Zillionaire, { RoadMap } from "../components/zillionaire/Zillionaire.vue";
 
 const { modelValue } = defineModels<{
@@ -57,12 +57,10 @@ const pointerIndex = computed({
   get: () => modelValue.value,
   set: (_v) => (modelValue.value = _v),
 });
-
-const zillionaireBoxRef = ref<HTMLDivElement>();
 </script>
 
 <template>
-  <div ref="zillionaireBoxRef" class="relative w-full overflow-hidden overflow-x-auto">
+  <div class="relative w-full overflow-hidden overflow-x-auto">
     <Zillionaire v-model="pointerIndex" :roadMap="roadMap" :jumpInterval="500" />
   </div>
 </template>

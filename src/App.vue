@@ -21,7 +21,9 @@ const showPrize = (prize: any) => {
 const currentIndex = ref(0);
 watch(currentIndex, async (index) => {
   if (!index) return;
+  // 抽奖
   const prize = await featchPrize(index);
+  // 开奖
   showPrize(prize);
 });
 

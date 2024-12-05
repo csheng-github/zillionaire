@@ -55,7 +55,11 @@ const decrease = async (step: number) => {
 
 const pointerRef = ref<InstanceType<typeof Pointer>>();
 const [loopPointer, isLooping] = useLoadingEvent(async (step: number) => {
-  step > 0 ? await increase(step) : await decrease(step);
+  if (step > 0) {
+    await increase(step);
+  } else {
+    await decrease(step);
+  }
   modelValue.value = stepPointer.value!.serialId;
 });
 

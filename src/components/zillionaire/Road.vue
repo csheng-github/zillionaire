@@ -19,13 +19,14 @@ interface Props {
 }
 const props = defineProps<Props>();
 
-const createPointer = (roadItem: RoadItem) => {
+const createPointer = (roadItem: RoadItem, index: number) => {
   const pointer = document.createElement("div") as El;
   pointer.style.width = roadItem.width;
   pointer.style.height = roadItem.height;
   pointer.style.top = roadItem.top;
   pointer.style.left = roadItem.left;
   pointer.style.transform = "translate(-50%, -50%)";
+  if (index === 0) pointer.textContent = "开始";
   pointer.classList.add("road-holder");
   return pointer;
 };
@@ -33,7 +34,7 @@ const createPointer = (roadItem: RoadItem) => {
 const generateRoad = (roadMap: RoadMap) => {
   const pointerMap = {} as Record<string, El>;
   roadMap.forEach((roadItem, index) => {
-    const pointer = createPointer(roadItem);
+    const pointer = createPointer(roadItem, index);
     pointer.serialId = index;
     pointer.rowIndex = roadItem.rowIndex;
     pointer.colIndex = roadItem.colIndex;
