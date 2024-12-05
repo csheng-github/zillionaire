@@ -30,7 +30,7 @@ const isFinished = ref(false);
 const finish = () => {
   isFinished.value = true;
   // some thing
-  console.log("success");
+  console.log("已完成游戏");
 };
 
 const increase = async (step: number) => {
@@ -89,14 +89,7 @@ onMounted(async () => {
   isFinished.value = false;
 });
 
-const resetOrigin = () => {
-  return (pointerRef.value?.$el as HTMLElement).scrollIntoView({
-    behavior: "smooth",
-    inline: "center",
-    block: "center",
-  });
-};
-defineExpose({ resetOrigin, isInitialized });
+defineExpose({ isInitialized });
 </script>
 
 <template>

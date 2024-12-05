@@ -58,16 +58,11 @@ const pointerIndex = computed({
   set: (_v) => (modelValue.value = _v),
 });
 
-const zillionaireRef = ref<InstanceType<typeof Zillionaire>>();
 const zillionaireBoxRef = ref<HTMLDivElement>();
-const onClickOrigin = () => {
-  zillionaireRef.value!.resetOrigin();
-};
 </script>
 
 <template>
-  <div class="relative w-full overflow-hidden overflow-x-auto" ref="zillionaireBoxRef">
-    <Zillionaire ref="zillionaireRef" v-model="pointerIndex" :roadMap="roadMap" :jumpInterval="500" />
-    <PrimaryButton class="absolute right-20px top-20px z-999" @click="onClickOrigin">回到原点</PrimaryButton>
+  <div ref="zillionaireBoxRef" class="relative w-full overflow-hidden overflow-x-auto">
+    <Zillionaire v-model="pointerIndex" :roadMap="roadMap" :jumpInterval="500" />
   </div>
 </template>

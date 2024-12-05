@@ -3,12 +3,11 @@ import Zillionaire from "./templates/Zillionaire.vue";
 import BlindBox from "./components/blind-box/BlindBox.vue";
 import { ref, watch } from "vue";
 
-
 // 抽奖：0 或 1（随机）
 const featchPrize = async (index: number) => {
   console.log(`目前走了${index}步`);
 
-  localStorage.setItem('dice_number', String(index))
+  localStorage.setItem("dice_number", String(index));
 
   return Math.floor(Math.random() * 2);
 };
@@ -31,7 +30,7 @@ const blindBoxRef = ref<InstanceType<typeof BlindBox>>();
 
 <template>
   <!-- 大富翁 -->
-  <Zillionaire ref="zillionaireRef" v-model="currentIndex" />
+  <Zillionaire v-model="currentIndex" />
 
   <!-- 盲盒 -->
   <BlindBox ref="blindBoxRef" />
