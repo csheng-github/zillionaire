@@ -84,7 +84,7 @@ const [initZillinaire] = useLoadingEvent(
 onMounted(async () => {
   await initZillinaire();
   const getPointerFromSite = roadRef.value!.getPointerFromSite;
-  modelValue.value = Number(localStorage.getItem('dice_number')) || 0
+  modelValue.value = Number(localStorage.getItem("dice_number")) || 0;
   stepPointer.value = getPointerFromSite(modelValue.value);
   isFinished.value = false;
 });
@@ -105,6 +105,12 @@ defineExpose({ resetOrigin, isInitialized });
       <div v-if="!isInitialized" class="bg-white/50 z-10 w-full h-full absolute top-0 left-0">
         <Loading class="absolute inset-1/2 -translate-1/2" />
       </div>
+
+      <div class="font-bold text-size-2xl text-center pt-6">探寻城市e富翁</div>
+      <div class="font-bold text-size-xs text-center">
+        福州市公交/地铁乘车立减金、各大美食商户优惠券、福豆等等好礼免费薅！！！
+      </div>
+
       <Road ref="roadRef" :roadMap="roadMap">
         <template #pointer>
           <Pointer
@@ -144,7 +150,7 @@ defineExpose({ resetOrigin, isInitialized });
 .sifter-container {
   z-index: 9;
   position: absolute;
-  bottom: 4%;
+  bottom: 40%;
   left: 50%;
   transform: translateX(-50%);
 }

@@ -35,7 +35,7 @@ const generateRoad = (roadMap: RoadMap) => {
   roadMap.forEach((roadItem, index) => {
     const pointer = createPointer(roadItem);
     pointer.serialId = index;
-    pointer.rowIndex = roadItem.rowIndex
+    pointer.rowIndex = roadItem.rowIndex;
     pointer.colIndex = roadItem.colIndex;
     pointerMap[index] = pointer;
   });
@@ -56,20 +56,19 @@ defineExpose({ getPointerFromSite, initRoad: init });
 
 <template>
   <div ref="roadBoxRef" class="road-box">
-    <slot name="pointer" />
-    <slot name="sifter" />
+    <slot name="pointer"></slot>
+    <slot name="sifter"></slot>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .road-box {
-  width: 100vw;
-  height: 100vh;
+  width: 80vw;
+  height: 80vh;
   position: absolute;
-  top: 50%;
+  bottom: 5%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%);
 
   :deep(.road-holder) {
     position: absolute;
